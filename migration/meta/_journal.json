@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1771307660482,
+      "tag": "20260217055420_create_todos",
+      "breakpoints": true
+    }
+  ]
+}
