@@ -11,9 +11,11 @@
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.19.9",
+		"@t3-oss/env-core": "^0.13.10",
 		"drizzle-orm": "^0.45.1",
 		"hono": "^4.11.9",
-		"mysql2": "^3.17.2"
+		"mysql2": "^3.17.2",
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.2",
