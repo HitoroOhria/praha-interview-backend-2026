@@ -8,6 +8,7 @@
 		"lint": "biome check",
 		"fix": "biome lint --write",
 		"format": "biome format --write",
+		"test": "vitest",
 		"db:generate": "drizzle-kit generate --config=drizzle.config.ts --prefix=timestamp",
 		"db:migrate": "drizzle-kit migrate --config=drizzle.config.ts",
 		"db:test:migrate": "drizzle-kit migrate --config=drizzle-test.config.ts"
