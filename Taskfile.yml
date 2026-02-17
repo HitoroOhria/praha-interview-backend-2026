@@ -1,0 +1,55 @@
+version: "3"
+
+tasks:
+  default:
+    desc: List all available tasks
+    cmds:
+      - task -l --sort none
+
+  lint:
+    desc: run lint
+    cmds:
+      - docker compose exec server npm run lint
+
+  fix:
+    desc: run fix
+    cmds:
+      - docker compose exec server npm run fix
+
+  format:
+    desc: run format
+    cmds:
+      - docker compose exec server npm run format
+
+  test:
+    desc: run test
+    cmds:
+      - docker compose exec server npm run test
+
+  fix-and-format:
+    desc: run fix and format
+    cmds:
+      - task: fix
+      - task: format
+
+  db:generate:
+    desc: generate db migration file
+    cmds:
+      - docker compose exec server npm run db:generate -- --name={{.NAME}}
+    requires:
+      vars: [NAME]
+
+  db:migrate:
+    desc: migrate db
+    cmds:
+      - docker compose exec server npm run db:migrate
+
+  db:test:migrate:
+    desc: migrate test db
+    cmds:
+      - docker compose exec server npm run db:test:migrate
+
+  db:
+    desc: connect to db
+    cmds:
+      - docker compose exec mysql mysql -h 127.0.0.1 -u root -proot -P 3306 db
