@@ -10,6 +10,7 @@ import {
 	responseInternalServerError,
 } from "@/handler/response.js";
 import { todoApp } from "@/handler/todoHandler.js";
+import { webhookApp } from "@/handler/webhook.js";
 
 const app = new Hono();
 
@@ -23,6 +24,7 @@ app.get("/", (c) => {
 	return c.text("Hello Hono!");
 });
 app.route("/", todoApp);
+app.route("/", webhookApp);
 
 app.onError((err, c) => {
 	console.error(err);
